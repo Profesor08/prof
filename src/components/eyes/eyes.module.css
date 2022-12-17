@@ -1,0 +1,45 @@
+.eye {
+  --eye-border: black;
+  --eye-background: white;
+  --eye-dot: black;
+}
+
+.eyes {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 1px;
+}
+
+.char {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 800;
+  color: white;
+  filter: drop-shadow(0 0 1px black);
+}
+
+.ts,
+.js,
+.css {
+  display: inline-block;
+  position: relative;
+}
+
+.ts .eyes {
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+.js .eyes {
+  position: absolute;
+  top: 0;
+  left: 3px;
+}
+
+.css .eyes {
+  position: absolute;
+  top: 0;
+  left: 8px;
+}
