@@ -22,6 +22,7 @@ import {
   Electron2,
   Electron3,
 } from "../../../components/Atom";
+import { RecoilRoot } from "recoil";
 
 const LogoAtom = () => {
   const [navbar, setNavbar] = useState<Element | null>(null);
@@ -60,44 +61,46 @@ const Layout: Component = ({ children }) => {
 
   return (
     <ThemeLayout title={title}>
-      <LogoAtom />
-      <div className={DocPageStyles.docPage}>
-        <aside
-          className={clsx(
-            ThemeClassNames.docs.docSidebarContainer,
-            SidebarStyles.docSidebarContainer,
-          )}
-        >
-          <SideBar />
-        </aside>
-        <main className={clsx(MainStyles.docMainContainer)}>
-          <div
+      <RecoilRoot>
+        <LogoAtom />
+        <div className={DocPageStyles.docPage}>
+          <aside
             className={clsx(
-              "container",
-              "padding-top--md",
-              "padding-bottom--lg",
+              ThemeClassNames.docs.docSidebarContainer,
+              SidebarStyles.docSidebarContainer,
             )}
           >
-            <div className="row">
-              <div className={clsx("col", DocItemColStyles.docItemCol)}>
-                <div className={DocItemStyles.docItemContainer}>
-                  <article>
-                    <GamesBreadcrumbs />
-                    <div
-                      className={clsx(
-                        ThemeClassNames.docs.docMarkdown,
-                        "markdown",
-                      )}
-                    >
-                      {children}
-                    </div>
-                  </article>
+            <SideBar />
+          </aside>
+          <main className={clsx(MainStyles.docMainContainer)}>
+            <div
+              className={clsx(
+                "container",
+                "padding-top--md",
+                "padding-bottom--lg",
+              )}
+            >
+              <div className="row">
+                <div className={clsx("col", DocItemColStyles.docItemCol)}>
+                  <div className={DocItemStyles.docItemContainer}>
+                    <article>
+                      <GamesBreadcrumbs />
+                      <div
+                        className={clsx(
+                          ThemeClassNames.docs.docMarkdown,
+                          "markdown",
+                        )}
+                      >
+                        {children}
+                      </div>
+                    </article>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </main>
-      </div>
+          </main>
+        </div>
+      </RecoilRoot>
     </ThemeLayout>
   );
 };
