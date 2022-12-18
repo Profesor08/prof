@@ -55,8 +55,8 @@ const AtomContainer = styled.div<Pick<IAtom.Atom, "size">>`
   display: grid;
   justify-items: center;
   align-items: center;
-  width: ${(p) => p.size};
-  height: ${(p) => p.size};
+  width: ${(p) => p.size}px;
+  height: ${(p) => p.size}px;
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
 `;
