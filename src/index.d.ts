@@ -3,6 +3,12 @@ declare module "*.scss" {
   export default content;
 }
 
+type StyledElementProps<T, E> = Omit<React.HTMLAttributes<E>, keyof T> & T;
+
+type Styled<T = {}, E = Element> = React.ComponentType<
+  StyledElementProps<T, E>
+>;
+
 type Component<
   T extends {} = {},
   K extends keyof JSX.IntrinsicElements = "div",

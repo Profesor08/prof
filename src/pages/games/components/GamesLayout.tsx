@@ -15,42 +15,18 @@ import {
   GamesContext,
   useGamesContext,
 } from "../context/GamesContext";
-import {
-  Atom,
-  Core,
-  Electron1,
-  Electron2,
-  Electron3,
-} from "../../../components/Atom";
+import { Atom } from "../../../components/Atom";
 import { RecoilRoot } from "recoil";
 
 const LogoAtom = () => {
   const [navbar, setNavbar] = useState<Element | null>(null);
-  const size = 32;
 
   useEffect(() => {
     setNavbar(document.querySelector(".navbar__logo"));
   }, []);
 
   if (navbar !== null) {
-    return ReactDOM.createPortal(
-      <Atom size={size}>
-        <Core size={size * 0.2} />
-        <Electron1
-          size={size * 0.128}
-          orbital={{ size: size * 0.857, weight: size * 0.05 }}
-        />
-        <Electron2
-          size={size * 0.128}
-          orbital={{ size: size * 0.857, weight: size * 0.05 }}
-        />
-        <Electron3
-          size={size * 0.128}
-          orbital={{ size: size * 0.857, weight: size * 0.05 }}
-        />
-      </Atom>,
-      navbar,
-    );
+    return ReactDOM.createPortal(<Atom size={32} />, navbar);
   }
 
   return null;

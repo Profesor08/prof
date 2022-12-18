@@ -1,8 +1,10 @@
-import styled, { keyframes } from "styled-components";
+import React, { useEffect, useRef } from "react";
+import styled from "styled-components";
 
 namespace IAtom {
   export type Atom = {
     size: number;
+    rotate?: boolean;
   };
 
   export type Core = {
@@ -11,50 +13,27 @@ namespace IAtom {
 
   export type Electron = {
     size: number;
-  };
-
-  export type Orbital = {
-    size: number;
+    diameter: number;
     weight: number;
   };
 }
 
-const atomRotation = keyframes`
-  from {
-    transform: rotateY(0turn);
-  }
-
-  to {
-    transform: rotateY(1turn);
-  }
-`;
-
-const getElectronRotation = (x: number, y: number, z: number) => keyframes`
-  from {
-    transform: rotateX(${x}turn) rotateY(${y}turn) rotateZ(${z}turn);
-  }
-
-  to {
-    transform: rotateX(${x}turn) rotateY(${y}turn) rotateZ(${z + 1}turn);
-  }
-`;
-
-const Electron = styled.div<IAtom.Electron & { orbital: IAtom.Orbital }>`
+const Electron = styled.div<IAtom.Electron>`
   position: relative;
   grid-column: 1;
   grid-row: 1;
-  width: ${(p) => p.orbital.size}px;
-  height: ${(p) => p.orbital.size}px;
+  width: ${(p) => p.diameter}px;
+  height: ${(p) => p.diameter}px;
   border-radius: 50%;
-  border: ${(p) => p.orbital.weight}px solid var(--ifm-font-color-base);
+  border: ${(p) => p.weight}px solid var(--ifm-font-color-base);
   transform-origin: 50% 50%;
   border-top-color: transparent;
 
   &:before {
     content: "";
     position: absolute;
-    top: ${(p) => -p.orbital.weight / 2}px;
-    left: ${(p) => -p.orbital.weight / 2}px;
+    top: ${(p) => -p.weight / 2}px;
+    left: ${(p) => -p.weight / 2}px;
     transform: translate(50%, 50%);
     width: ${(p) => p.size}px;
     height: ${(p) => p.size}px;
@@ -63,38 +42,122 @@ const Electron = styled.div<IAtom.Electron & { orbital: IAtom.Orbital }>`
   }
 `;
 
-export const Electron1 = styled(Electron)`
-  transform: rotateX(0turn) rotateY(0.125turn);
-  animation: ${getElectronRotation(0, 0.125, 0)} 1s linear infinite;
-`;
-
-export const Electron2 = styled(Electron)`
-  transform: rotateX(0.125turn) rotateY(0.0625turn);
-  animation: ${getElectronRotation(0.125, 0.0625, 0.35)} 1s linear infinite;
-`;
-
-export const Electron3 = styled(Electron)`
-  transform: rotateX(0.125turn) rotateY(-0.0625turn);
-  animation: ${getElectronRotation(0.125, -0.0625, 0.75)} 1s linear infinite;
-`;
-
-export const Core = styled.div<IAtom.Core>`
+const Core = styled.div<IAtom.Core>`
   grid-column: 1;
   grid-row: 1;
   width: ${(p) => p.size}px;
   height: ${(p) => p.size}px;
   border-radius: 50%;
   background-color: var(--ifm-font-color-base);
-  animation: ${atomRotation} 9s linear infinite reverse;
 `;
 
-export const Atom = styled.div<IAtom.Atom>`
+const AtomContainer = styled.div<Pick<IAtom.Atom, "size">>`
   display: grid;
   justify-items: center;
   align-items: center;
-  width: ${(p) => p.size}px;
-  height: ${(p) => p.size}px;
+  width: ${(p) => p.size};
+  height: ${(p) => p.size};
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
-  animation: ${atomRotation} 9s linear infinite;
 `;
+
+export const Atom = styled<Styled<IAtom.Atom>>(
+  ({ size, rotate = true, ...props }) => {
+    const atomRef = useRef<HTMLDivElement>(null);
+    const coreRef = useRef<HTMLDivElement>(null);
+    const electronRefs = [
+      useRef<HTMLDivElement>(null),
+      useRef<HTMLDivElement>(null),
+      useRef<HTMLDivElement>(null),
+    ];
+
+    useEffect(() => {
+      if (atomRef.current !== null && rotate === true) {
+        atomRef.current.animate(
+          [
+            {
+              transform: "rotateY(0turn)",
+            },
+            {
+              transform: "rotateY(1turn)",
+            },
+          ],
+          {
+            duration: 9000,
+            easing: "linear",
+            iterations: Infinity,
+          },
+        );
+      }
+    }, [rotate]);
+
+    useEffect(() => {
+      if (coreRef.current !== null && rotate === true) {
+        coreRef.current.animate(
+          [
+            {
+              transform: "rotateY(0turn)",
+            },
+            {
+              transform: "rotateY(-1turn)",
+            },
+          ],
+          {
+            duration: 9000,
+            easing: "linear",
+            iterations: Infinity,
+          },
+        );
+      }
+    }, [rotate]);
+
+    useEffect(() => {
+      const turn = 0.19;
+
+      const rotate = [
+        [0, turn],
+        [turn, turn / 2],
+        [turn, -turn / 2],
+      ];
+
+      electronRefs.forEach((electronRef, index) => {
+        const x = rotate[index][0];
+        const y = rotate[index][1];
+        const z = (1 / 3) * index;
+
+        electronRef.current?.animate(
+          [
+            {
+              transform: `rotateX(${x}turn) rotateY(${y}turn) rotateZ(${z}turn)`,
+            },
+            {
+              transform: `rotateX(${x}turn) rotateY(${y}turn) rotateZ(${
+                z + 1
+              }turn)`,
+            },
+          ],
+          {
+            duration: 1000,
+            easing: "linear",
+            iterations: Infinity,
+          },
+        );
+      });
+    }, []);
+
+    return (
+      <AtomContainer ref={atomRef} size={size} {...props}>
+        <Core ref={coreRef} size={size * 0.2} />
+        {new Array(3).fill(0).map((n, index) => (
+          <Electron
+            key={index}
+            ref={electronRefs[index]}
+            size={size * 0.128}
+            diameter={size * 0.857}
+            weight={size * 0.05}
+          />
+        ))}
+      </AtomContainer>
+    );
+  },
+)``;
