@@ -8,6 +8,7 @@ import styled, { css } from "styled-components";
 import { useStorage } from "@site/src/hooks/useStorage";
 import { Item } from "./components/item/Item";
 import { RuneName } from "./components/item-tooltip/ItemTooltip";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 const Container = styled.div`
   display: grid;
@@ -91,7 +92,7 @@ const RunewordCalculatorPage = () => {
     <D2Layout>
       <MDXContent>
         <Heading as="h1">Runeword Calculator</Heading>
-        <RunewordCalculator />
+        <BrowserOnly>{() => <RunewordCalculator />}</BrowserOnly>
       </MDXContent>
     </D2Layout>
   );

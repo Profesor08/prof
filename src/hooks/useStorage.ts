@@ -1,5 +1,29 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
+function getItem<T>(key: string, initial: T): T;
+function getItem<T>(key: string): T | null;
+function getItem<T>(key: string, initial?: T): T | null {
+  try {
+    const data = localStorage.getItem(key);
+
+    if (data !== null) {
+      return JSON.parse(data);
+    }
+  } catch (err) {}
+
+  if (initial !== undefined) {
+    return initial;
+  }
+
+  return null;
+}
+
+function setItem<T>(key: string, data: T) {
+  try {
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch (err) {}
+}
+
 export const useStorage = <T>(
   key: string,
   initialState: T,
@@ -7,13 +31,13 @@ export const useStorage = <T>(
   const [savedKey] = useState(key);
 
   const [state, setState] = useState<T>(() => {
-    const data = localStorage.getItem(savedKey);
+    const data = getItem<T>(savedKey);
 
     if (data !== null) {
-      return JSON.parse(data);
+      return data;
     }
 
-    localStorage.setItem(savedKey, JSON.stringify(initialState));
+    setItem(savedKey, initialState);
 
     return initialState;
   });
@@ -27,17 +51,19 @@ export const useStorage = <T>(
   }, [savedKey]);
 
   useEffect(() => {
-    localStorage.setItem(savedKey, JSON.stringify(state));
+    try {
+      localStorage.setItem(savedKey, JSON.stringify(state));
+    } catch (err) {}
   }, [savedKey, state]);
 
   return [state, setState];
 };
 
 export const getStorage = <T>(key: string, initialState: T): T => {
-  const data = localStorage.getItem(key);
+  const data = getItem<T>(key);
 
   if (data !== null) {
-    return JSON.parse(data);
+    return data;
   }
 
   return initialState;
