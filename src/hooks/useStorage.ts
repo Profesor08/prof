@@ -32,3 +32,13 @@ export const useStorage = <T>(
 
   return [state, setState];
 };
+
+export const getStorage = <T>(key: string, initialState: T): T => {
+  const data = localStorage.getItem(key);
+
+  if (data !== null) {
+    return JSON.parse(data);
+  }
+
+  return initialState;
+};

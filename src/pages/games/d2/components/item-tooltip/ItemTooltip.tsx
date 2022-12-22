@@ -3,7 +3,8 @@ import { HTMLMotionProps, motion } from "framer-motion";
 import type { Placement } from "@floating-ui/react";
 import styled from "styled-components";
 
-const Tooltip = styled(motion.div)`
+export const Tooltip = styled(motion.div)`
+  z-index: 1;
   display: grid;
   align-content: start;
   gap: 12px;
@@ -11,7 +12,7 @@ const Tooltip = styled(motion.div)`
   background-color: rgba(0, 0, 0, 0.9);
 `;
 
-export const Text = styled(motion.div)`
+export const ItemText = styled(motion.div)`
   font-family: exocet;
   font-size: 15px;
   line-height: 18px;
@@ -19,21 +20,35 @@ export const Text = styled(motion.div)`
   color: ${(p) => p.theme.white};
 `;
 
+export const ItemType = styled(ItemText)`
+  color: ${(p) => p.theme.grey};
+`;
+
 export const Group = styled.div`
   display: grid;
   align-content: start;
 `;
 
-export const RuneName = styled(Text)`
+export const RuneName = styled(ItemText)`
   display: grid;
   align-content: start;
   color: ${(p) => p.theme.orange};
 `;
 
+export const ItemName = styled(ItemText)`
+  display: grid;
+  align-content: start;
+  color: ${(p) => p.theme.gold};
+`;
+
+export const ItemAttribute = styled(ItemText)`
+  color: ${(p) => p.theme.blue};
+`;
+
 export const ItemTooltip = React.forwardRef<
   HTMLDivElement,
   HTMLMotionProps<"div"> & {
-    placement: Placement;
+    placement?: Placement;
   }
 >(({ children, placement, ...props }, ref) => {
   const direction = placement === "top" ? -1 : 1;

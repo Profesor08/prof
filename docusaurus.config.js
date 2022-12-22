@@ -59,6 +59,7 @@ const config = {
             "**/types/**/*",
             "**/theme/**/*",
             "**/layout/**/*",
+            "**/data/**/*",
           ],
         },
       }),
