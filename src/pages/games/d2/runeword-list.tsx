@@ -4,6 +4,7 @@ import Heading from "@theme/MDXComponents/Heading";
 import D2Layout from "./layout/D2Layout";
 import { useRunes } from "./store/store";
 import { Rune } from "./components/rune/Rune";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 const RunewordList = () => {
   const [runes] = useRunes();
@@ -22,7 +23,7 @@ const RunewordListPage = () => {
     <D2Layout>
       <MDXContent>
         <Heading as="h1">Runeword List</Heading>
-        <RunewordList />
+        <BrowserOnly>{() => <RunewordList />}</BrowserOnly>
       </MDXContent>
     </D2Layout>
   );
