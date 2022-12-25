@@ -1,12 +1,12 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { GamesLayout } from "../../components/GamesLayout";
 import { theme } from "../theme/theme";
 
 export const D2Layout: Component = ({ children }) => {
   return (
     <GamesLayout>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
     </GamesLayout>
   );
 };

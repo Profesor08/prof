@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
 import ThemeLayout from "@theme/Layout";
 import { ThemeClassNames } from "@docusaurus/theme-common";
@@ -17,6 +17,43 @@ import {
 } from "../context/GamesContext";
 import { Atom } from "../../../components/Atom";
 import { RecoilRoot } from "recoil";
+import {
+  createTheme,
+  ThemeOptions as MaterialThemeOptions,
+  ThemeProvider as MaterialThemeProvider,
+} from "@mui/material/styles";
+import { useColorMode } from "@docusaurus/theme-common";
+
+// --ifm-color-primary: #3578e5;
+// --ifm-color-secondary: #ebedf0;
+// --ifm-color-success: #00a400;
+// --ifm-color-info: #54c7ec;
+// --ifm-color-warning: #ffba00;
+// --ifm-color-danger: #fa383e;
+
+const materialThemeLight: MaterialThemeOptions = {
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#3578e5",
+    },
+    secondary: {
+      main: "#ebedf0",
+    },
+  },
+};
+
+const materialThemeDark: MaterialThemeOptions = {
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#3578e5",
+    },
+    secondary: {
+      main: "#ebedf0",
+    },
+  },
+};
 
 const LogoAtom = () => {
   const [navbar, setNavbar] = useState<Element | null>(null);
@@ -32,12 +69,19 @@ const LogoAtom = () => {
   return null;
 };
 
-const Layout: Component = ({ children }) => {
-  const { title } = useGamesContext();
+const Content: Component = ({ children }) => {
+  const { colorMode } = useColorMode();
+  const materialTheme = useMemo(() => {
+    if (colorMode === "light") {
+      return createTheme(materialThemeLight);
+    }
+
+    return createTheme(materialThemeDark);
+  }, [colorMode]);
 
   return (
-    <ThemeLayout title={title}>
-      <RecoilRoot>
+    <RecoilRoot>
+      <MaterialThemeProvider theme={materialTheme}>
         <LogoAtom />
         <div className={DocPageStyles.docPage}>
           <aside
@@ -76,7 +120,17 @@ const Layout: Component = ({ children }) => {
             </div>
           </main>
         </div>
-      </RecoilRoot>
+      </MaterialThemeProvider>
+    </RecoilRoot>
+  );
+};
+
+const Layout: Component = ({ children }) => {
+  const { title } = useGamesContext();
+
+  return (
+    <ThemeLayout title={title}>
+      <Content>{children}</Content>
     </ThemeLayout>
   );
 };

@@ -39,10 +39,42 @@ const itemsStore = atom({
   default: items,
 });
 
-const filterStore = atom({
-  key: "filterStore",
-  default: {},
+const filterNameStore = atom<string>({
+  key: "filterNameStore",
+  default: "",
 });
+
+export const useName = () => {
+  return useRecoilState(filterNameStore);
+};
+
+const filterSocketsStore = atom<number | "">({
+  key: "filterSocketsStore",
+  default: "",
+});
+
+export const useSockets = () => {
+  return useRecoilState(filterSocketsStore);
+};
+
+const filterSortingStore = atom<
+  "" | "nameAsc" | "nameDesc" | "levelAsc" | "levelDesc"
+>({
+  key: "filterSortingStore",
+  default: "",
+});
+
+export const useSorting = () => {
+  return useRecoilState(filterSortingStore);
+};
+
+export const useFiltersActive = () => {
+  const [name] = useName();
+  const [sockets] = useSockets();
+  const [sorting] = useSorting();
+
+  return name.length > 0 || sockets !== "" || sorting !== "";
+};
 
 export const useRunes = (): [
   IRuneWithState[],
@@ -95,8 +127,72 @@ export const useSelectedRunes = () => {
 export const useItems = () => {
   const items = useRecoilValue(itemsStore);
   const runes = useSelectedRunes();
+  const [name] = useName();
+  const [sockets] = useSockets();
+  const [sorting] = useSorting();
 
-  return items.filter((item) =>
-    item.runes.every((itemRune) => runes.some((r) => r.id === itemRune)),
-  );
+  return items
+    .filter((item) => {
+      const isRuneMatch = item.runes.every((itemRune) =>
+        runes.some((r) => r.id === itemRune),
+      );
+      const isNameMatch =
+        name.length === 0
+          ? true
+          : item.name.toLowerCase().includes(name.toLowerCase());
+      const isSocketsMatch =
+        sockets === "" ? true : item.runes.length === sockets;
+
+      return isRuneMatch && isNameMatch && isSocketsMatch;
+    })
+    .sort((a, b) => {
+      switch (sorting) {
+        case "":
+          return 1;
+        case "nameAsc": {
+          if (a.name > b.name) {
+            return 1;
+          }
+
+          if (a.name < b.name) {
+            return -1;
+          }
+
+          return 0;
+        }
+        case "nameDesc": {
+          if (a.name > b.name) {
+            return -1;
+          }
+
+          if (a.name < b.name) {
+            return 1;
+          }
+
+          return 0;
+        }
+        case "levelAsc": {
+          if (a.level > b.level) {
+            return 1;
+          }
+
+          if (a.level < b.level) {
+            return -1;
+          }
+
+          return 0;
+        }
+        case "levelDesc": {
+          if (a.level > b.level) {
+            return -1;
+          }
+
+          if (a.level < b.level) {
+            return 1;
+          }
+
+          return 0;
+        }
+      }
+    });
 };

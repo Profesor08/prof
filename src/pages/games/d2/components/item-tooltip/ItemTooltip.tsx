@@ -4,7 +4,6 @@ import type { Placement } from "@floating-ui/react";
 import styled from "styled-components";
 
 export const Tooltip = styled(motion.div)`
-  z-index: 1;
   display: grid;
   align-content: start;
   gap: 12px;

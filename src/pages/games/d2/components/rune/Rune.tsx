@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   flip,
+  FloatingPortal,
   offset,
   shift,
   useFloating,
@@ -47,38 +48,40 @@ export const Rune = styled<Styled<IRune>>(
           {...getReferenceProps()}
           {...props}
         />
-        {open && (
-          <ItemTooltip
-            ref={floating}
-            style={{
-              position: strategy,
-              top: y ?? 0,
-              left: x ?? 0,
-            }}
-            placement={placement}
-            {...getFloatingProps()}
-          >
-            <Group>
-              <RuneName>{name} Rune</RuneName>
-            </Group>
-            <Group>
-              {stats.map(({ slots, attributes }) =>
-                slots.map((slot) =>
-                  attributes.map((attribute, index) => (
-                    <ItemText key={`${slot.toString()}-${index}`}>
-                      {index === 0 && <>{slot.toString()}: </>}
-                      {attribute}
-                      {index !== attributes.length - 1 && <>,</>}
-                    </ItemText>
-                  )),
-                ),
-              )}
-            </Group>
-            <Group>
-              <ItemText>Required level: {level}</ItemText>
-            </Group>
-          </ItemTooltip>
-        )}
+        <FloatingPortal root={document.body}>
+          {open && (
+            <ItemTooltip
+              ref={floating}
+              style={{
+                position: strategy,
+                top: y ?? 0,
+                left: x ?? 0,
+              }}
+              placement={placement}
+              {...getFloatingProps()}
+            >
+              <Group>
+                <RuneName>{name} Rune</RuneName>
+              </Group>
+              <Group>
+                {stats.map(({ slots, attributes }) =>
+                  slots.map((slot) =>
+                    attributes.map((attribute, index) => (
+                      <ItemText key={`${slot.toString()}-${index}`}>
+                        {index === 0 && <>{slot.toString()}: </>}
+                        {attribute}
+                        {index !== attributes.length - 1 && <>,</>}
+                      </ItemText>
+                    )),
+                  ),
+                )}
+              </Group>
+              <Group>
+                <ItemText>Required level: {level}</ItemText>
+              </Group>
+            </ItemTooltip>
+          )}
+        </FloatingPortal>
       </>
     );
   },
