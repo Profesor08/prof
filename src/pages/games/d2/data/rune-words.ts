@@ -98,6 +98,13 @@ export type IItem = {
   ladderOnly: boolean;
 };
 
+export type IItemWithMatches = IItem & {
+  match: {
+    name: string;
+    attributeName: string;
+  };
+};
+
 export const items = [
   {
     name: ItemName.ANCIENTS_PLEDGE,

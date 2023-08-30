@@ -15,6 +15,7 @@ import { Item } from "./components/item/Item";
 import { Rune } from "./components/rune/Rune";
 import D2Layout from "./layout/D2Layout";
 import {
+  useAttributeName,
   useFiltersActive,
   useItems,
   useName,
@@ -123,6 +124,34 @@ const NameFilter = styled(({ ...props }) => {
   );
 })``;
 
+const AttributeNameFilter = styled(({ ...props }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const attributeName = useAttributeName((state) => state.attributeName);
+  const setAttributeName = useAttributeName((state) => state.setAttributeName);
+
+  useFormReset(ref, "", setAttributeName);
+
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+      setAttributeName(event.target.value);
+    },
+    [setAttributeName]
+  );
+
+  return (
+    <TextField
+      ref={ref}
+      value={attributeName}
+      label="Option"
+      variant="outlined"
+      size="small"
+      type="search"
+      onChange={handleChange}
+      {...props}
+    />
+  );
+})``;
+
 const SocketsFilter = styled(({ ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
   const sockets = useSockets((state) => state.sockets);
@@ -210,19 +239,33 @@ const FiltersReset = styled(({ ...props }) => {
 
 const FiltersList = styled.form`
   display: grid;
-  grid-template-columns: 1fr 100px 200px 34px;
-  grid-template-areas: "name sockets sorting reset";
+  grid-template-columns: 1fr 1fr 100px 200px 34px;
+  grid-template-areas: "name attribute-name sockets sorting reset";
   align-content: start;
   align-items: center;
   gap: 8px;
 
   @media (min-width: 997px) and (max-width: 1199.98px), (max-width: 649.98px) {
-    grid-template-columns: 1fr 1fr 34px;
-    grid-template-areas: "name name name" "sockets sorting reset";
+    grid-template-columns: 1fr 34px 1fr 34px;
+    grid-template-areas:
+      "name name attribute-name attribute-name"
+      "sockets sockets sorting reset";
+  }
+
+  @media (max-width: 649.98px) {
+    grid-template-columns: 1fr 34px 1fr 34px;
+    grid-template-areas:
+      "name name name name"
+      "attribute-name attribute-name attribute-name attribute-name"
+      "sockets sockets sorting reset";
   }
 
   ${NameFilter} {
     grid-area: name;
+  }
+
+  ${AttributeNameFilter} {
+    grid-area: attribute-name;
   }
 
   ${SocketsFilter} {
@@ -242,6 +285,7 @@ const FiltersForm = () => {
   return (
     <FiltersList>
       <NameFilter />
+      <AttributeNameFilter />
       <SocketsFilter />
       <SortingFilter />
       <FiltersReset />

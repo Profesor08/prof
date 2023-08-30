@@ -1,17 +1,18 @@
 import React, { useMemo } from "react";
 import styled from "styled-components";
-import { IItem } from "../../data/rune-words";
+import { Match } from "../../../components/Match";
+import { IItemWithMatches } from "../../data/rune-words";
 import {
-  Tooltip,
-  ItemText,
   Group,
-  ItemName,
-  ItemType,
   ItemAttribute,
+  ItemName,
+  ItemText,
+  ItemType,
+  Tooltip,
 } from "../item-tooltip/ItemTooltip";
 
-export const Item = styled<Styled<IItem>>(
-  ({ name, attributes, level, itemTypes, runes, ladderOnly }) => {
+export const Item = styled<Styled<IItemWithMatches>>(
+  ({ name, attributes, level, itemTypes, runes, ladderOnly, match }) => {
     const typesText = useMemo(() => {
       return itemTypes.map((type) => type.toString()).join(", ");
     }, [itemTypes]);
@@ -22,7 +23,9 @@ export const Item = styled<Styled<IItem>>(
     return (
       <Tooltip>
         <Group>
-          <ItemName>{name}</ItemName>
+          <ItemName>
+            <Match value={match.name}>{name}</Match>
+          </ItemName>
         </Group>
         <Group>
           <ItemType>
@@ -37,7 +40,9 @@ export const Item = styled<Styled<IItem>>(
         </Group>
         <Group>
           {attributes.map((attribute, index) => (
-            <ItemAttribute key={index}>{attribute}</ItemAttribute>
+            <ItemAttribute key={index}>
+              <Match value={match.attributeName}>{attribute}</Match>
+            </ItemAttribute>
           ))}
         </Group>
         {ladderOnly === true && (
@@ -47,5 +52,5 @@ export const Item = styled<Styled<IItem>>(
         )}
       </Tooltip>
     );
-  },
+  }
 )``;

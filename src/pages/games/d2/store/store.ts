@@ -54,6 +54,16 @@ export const useName = create<{
   },
 }));
 
+export const useAttributeName = create<{
+  attributeName: string;
+  setAttributeName: (attributeName: string) => void;
+}>((set) => ({
+  attributeName: "",
+  setAttributeName: (attributeName) => {
+    set({ attributeName });
+  },
+}));
+
 export const useSockets = create<{
   sockets: string;
   setSockets: (sockets: string) => void;
@@ -78,10 +88,16 @@ export const useSorting = create<{
 
 export const useFiltersActive = () => {
   const name = useName((state) => state.name);
+  const attributeName = useAttributeName((state) => state.attributeName);
   const sockets = useSockets((state) => state.sockets);
   const sorting = useSorting((state) => state.sorting);
 
-  return name.length > 0 || sockets !== "" || sorting !== "";
+  return (
+    name.length > 0 ||
+    attributeName.length > 0 ||
+    sockets !== "" ||
+    sorting !== ""
+  );
 };
 
 export const useRunes = (): [
@@ -137,10 +153,20 @@ export const useItems = () => {
   const items = useItemsStore((state) => state.items);
   const runes = useSelectedRunes();
   const name = useName((state) => state.name);
+  const attributeName = useAttributeName((state) => state.attributeName);
   const sockets = useSockets((state) => state.sockets);
   const sorting = useSorting((state) => state.sorting);
 
   return items
+    .map((item) => {
+      return {
+        ...item,
+        match: {
+          name,
+          attributeName,
+        },
+      };
+    })
     .filter((item) => {
       const isRuneMatch = item.runes.every((itemRune) =>
         runes.some((r) => r.id === itemRune)
@@ -151,10 +177,17 @@ export const useItems = () => {
           ? true
           : item.name.toLowerCase().includes(name.toLowerCase());
 
+      const isOptionsMatch =
+        attributeName.length === 0
+          ? true
+          : item.attributes.some((attribute) =>
+              attribute.toLowerCase().includes(attributeName.toLowerCase())
+            );
+
       const isSocketsMatch =
         sockets === "" ? true : item.runes.length.toString() === sockets;
 
-      return isRuneMatch && isNameMatch && isSocketsMatch;
+      return isRuneMatch && isNameMatch && isOptionsMatch && isSocketsMatch;
     })
     .sort((a, b) => {
       switch (sorting) {
