@@ -24,6 +24,11 @@ export const gamesConfig: Context = {
         { title: "Runeword List", path: "/games/d2/runeword-list" },
       ],
     },
+    {
+      title: "Mu Online",
+      path: "/games/mu-online",
+      pages: [{ title: "Item Drop", path: "/games/mu-online/item-drop" }],
+    },
   ],
 };
 

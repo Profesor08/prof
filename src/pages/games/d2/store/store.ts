@@ -1,6 +1,6 @@
 import { getStorage, useStorage } from "@site/src/hooks/useStorage";
 import { useCallback, useMemo } from "react";
-import { atom, SetterOrUpdater, useRecoilState, useRecoilValue } from "recoil";
+import { create } from "zustand";
 import { items } from "../data/rune-words";
 import { IRune, Rune, runes } from "../data/runes";
 
@@ -18,11 +18,13 @@ const storage = getStorage<IRunewordCalculatorStorage>("runeword-calculator", {
   runes: [],
 });
 
-const runesStore = atom<IRunesStore>({
-  key: "runesStore",
-  default: Object.entries(runes).reduce((runes, [key, rune]) => {
+const useRunesStore = create<{
+  runes: IRunesStore;
+  setRunes: (runes: IRunesStore) => void;
+}>((set) => ({
+  runes: Object.entries(runes).reduce((runes, [key, rune]) => {
     const active = storage.runes.some(
-      ([k, active]) => k === key && active === true,
+      ([k, active]) => k === key && active === true
     );
 
     runes[rune.id] = {
@@ -32,46 +34,52 @@ const runesStore = atom<IRunesStore>({
 
     return runes;
   }, {} as IRunesStore),
-});
 
-const itemsStore = atom({
-  key: "itemsStore",
-  default: items,
-});
+  setRunes: (runes) => {
+    set({ runes });
+  },
+}));
 
-const filterNameStore = atom<string>({
-  key: "filterNameStore",
-  default: "",
-});
+const useItemsStore = create(() => ({
+  items,
+}));
 
-export const useName = () => {
-  return useRecoilState(filterNameStore);
-};
+export const useName = create<{
+  name: string;
+  setName: (sockets: string) => void;
+}>((set) => ({
+  name: "",
+  setName: (name) => {
+    set({ name });
+  },
+}));
 
-const filterSocketsStore = atom<number | "">({
-  key: "filterSocketsStore",
-  default: "",
-});
+export const useSockets = create<{
+  sockets: string;
+  setSockets: (sockets: string) => void;
+}>((set) => ({
+  sockets: "",
+  setSockets: (sockets) => {
+    set({ sockets });
+  },
+}));
 
-export const useSockets = () => {
-  return useRecoilState(filterSocketsStore);
-};
+type Sorting = "" | "nameAsc" | "nameDesc" | "levelAsc" | "levelDesc";
 
-const filterSortingStore = atom<
-  "" | "nameAsc" | "nameDesc" | "levelAsc" | "levelDesc"
->({
-  key: "filterSortingStore",
-  default: "",
-});
-
-export const useSorting = () => {
-  return useRecoilState(filterSortingStore);
-};
+export const useSorting = create<{
+  sorting: Sorting;
+  setSorting: (soring: Sorting) => void;
+}>((set) => ({
+  sorting: "",
+  setSorting: (sorting) => {
+    set({ sorting });
+  },
+}));
 
 export const useFiltersActive = () => {
-  const [name] = useName();
-  const [sockets] = useSockets();
-  const [sorting] = useSorting();
+  const name = useName((state) => state.name);
+  const sockets = useSockets((state) => state.sockets);
+  const sorting = useSorting((state) => state.sorting);
 
   return name.length > 0 || sockets !== "" || sorting !== "";
 };
@@ -79,28 +87,29 @@ export const useFiltersActive = () => {
 export const useRunes = (): [
   IRuneWithState[],
   (rune: IRune, active: boolean) => void,
-  SetterOrUpdater<IRunesStore>,
+  (runes: IRunesStore) => void
 ] => {
-  const [state, setState] = useRecoilState(runesStore);
+  const storeRunes = useRunesStore((state) => state.runes);
+  const setRunes = useRunesStore((state) => state.setRunes);
   const [store, setStore] = useStorage<IRunewordCalculatorStorage>(
     "runeword-calculator",
     {
       runes: [],
-    },
+    }
   );
 
   const setRune = useCallback(
     (rune: IRune, active: boolean) => {
       const newState = {
-        ...state,
+        ...storeRunes,
       };
 
       newState[rune.id] = {
-        ...state[rune.id],
+        ...storeRunes[rune.id],
         active: active,
       };
 
-      setState(newState);
+      setRunes(newState);
       setStore({
         runes: Object.entries(newState).map(([key, rune]) => [
           key,
@@ -108,14 +117,14 @@ export const useRunes = (): [
         ]),
       });
     },
-    [state, setState],
+    [storeRunes, setRunes]
   );
 
   const runes = useMemo(() => {
-    return Object.entries(state).map(([key, rune]) => rune);
-  }, [state]);
+    return Object.entries(storeRunes).map(([key, rune]) => rune);
+  }, [storeRunes]);
 
-  return [runes, setRune, setState];
+  return [runes, setRune, setRunes];
 };
 
 export const useSelectedRunes = () => {
@@ -125,23 +134,25 @@ export const useSelectedRunes = () => {
 };
 
 export const useItems = () => {
-  const items = useRecoilValue(itemsStore);
+  const items = useItemsStore((state) => state.items);
   const runes = useSelectedRunes();
-  const [name] = useName();
-  const [sockets] = useSockets();
-  const [sorting] = useSorting();
+  const name = useName((state) => state.name);
+  const sockets = useSockets((state) => state.sockets);
+  const sorting = useSorting((state) => state.sorting);
 
   return items
     .filter((item) => {
       const isRuneMatch = item.runes.every((itemRune) =>
-        runes.some((r) => r.id === itemRune),
+        runes.some((r) => r.id === itemRune)
       );
+
       const isNameMatch =
         name.length === 0
           ? true
           : item.name.toLowerCase().includes(name.toLowerCase());
+
       const isSocketsMatch =
-        sockets === "" ? true : item.runes.length === sockets;
+        sockets === "" ? true : item.runes.length.toString() === sockets;
 
       return isRuneMatch && isNameMatch && isSocketsMatch;
     })

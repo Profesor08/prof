@@ -1,6 +1,18 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import MDXContent from "@theme/MDXContent";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import FormControl from "@mui/material/FormControl";
+import IconButton from "@mui/material/IconButton";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import TextField from "@mui/material/TextField";
 import Heading from "@theme/MDXComponents/Heading";
+import MDXContent from "@theme/MDXContent";
+import React, { useCallback, useEffect, useRef } from "react";
+import styled, { css } from "styled-components";
+import { RuneName } from "./components/item-tooltip/ItemTooltip";
+import { Item } from "./components/item/Item";
+import { Rune } from "./components/rune/Rune";
 import D2Layout from "./layout/D2Layout";
 import {
   useFiltersActive,
@@ -10,18 +22,6 @@ import {
   useSockets,
   useSorting,
 } from "./store/store";
-import { Rune } from "./components/rune/Rune";
-import styled, { css } from "styled-components";
-import { Item } from "./components/item/Item";
-import { RuneName } from "./components/item-tooltip/ItemTooltip";
-import BrowserOnly from "@docusaurus/BrowserOnly";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 const Container = styled.div`
   display: grid;
@@ -80,7 +80,7 @@ const ItemsList = styled.div`
 function useFormReset<T, E extends Element = Element>(
   ref: React.RefObject<E>,
   resetValue: T,
-  handler: (value: T) => void,
+  handler: (value: T) => void
 ) {
   useEffect(() => {
     // find closest form and reset selected value on form reset
@@ -97,21 +97,22 @@ function useFormReset<T, E extends Element = Element>(
 
 const NameFilter = styled(({ ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [value, setValue] = useName();
+  const name = useName((state) => state.name);
+  const setName = useName((state) => state.setName);
 
-  useFormReset(ref, "", setValue);
+  useFormReset(ref, "", setName);
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-      setValue(event.target.value);
+      setName(event.target.value);
     },
-    [],
+    [setName]
   );
 
   return (
     <TextField
       ref={ref}
-      value={value}
+      value={name}
       label="Name"
       variant="outlined"
       size="small"
@@ -124,19 +125,23 @@ const NameFilter = styled(({ ...props }) => {
 
 const SocketsFilter = styled(({ ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [value, setValue] = useSockets();
+  const sockets = useSockets((state) => state.sockets);
+  const setSockets = useSockets((state) => state.setSockets);
 
-  useFormReset(ref, "", setValue);
+  useFormReset(ref, "", setSockets);
 
-  const handleChange = useCallback((event: SelectChangeEvent<typeof value>) => {
-    setValue(event.target.value as typeof value);
-  }, []);
+  const handleChange = useCallback(
+    (event: SelectChangeEvent<typeof sockets>) => {
+      setSockets(event.target.value as typeof sockets);
+    },
+    [setSockets]
+  );
 
   return (
     <FormControl ref={ref} size="small" variant="outlined" {...props}>
       <InputLabel>Sockets</InputLabel>
-      <Select<typeof value>
-        value={value}
+      <Select<typeof sockets>
+        value={sockets}
         onChange={handleChange}
         onReset={console.log}
         label="Sockets"
@@ -156,7 +161,8 @@ const SocketsFilter = styled(({ ...props }) => {
 
 const SortingFilter = styled(({ ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [value, setValue] = useSorting();
+  const value = useSorting((state) => state.sorting);
+  const setValue = useSorting((state) => state.setSorting);
 
   useFormReset(ref, "", setValue);
 

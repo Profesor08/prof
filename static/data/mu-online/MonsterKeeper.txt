@@ -1,0 +1,1228 @@
+// Lorencia
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+3		1		"Spider"		2
+2		1		"Scorpion"		4
+0		1		"Bull Fighter"		6
+1		1		"Hound"		9
+4		1		"Elite Bull Fighter"		12
+6		1		"Lich"		14
+7		1		"Giant"		17
+14		1		"Skeleton"		19
+
+// Noria
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+26		1		"Goblin"		3
+27		1		"Chain Scorpion"		5
+33		1		"Elite Goblin"		8
+28		1		"Beetle Monster"		10
+29		1		"Hunter"		13
+30		1		"Forest Monster"		15
+31		1		"Agon"		16
+32		1		"Stone Golem"		18
+
+// Devias
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+24		1		"Worm"		20
+22		1		"Ice Monster"		22
+23		1		"Hommerd"		24
+21		1		"Assassin"		26
+19		1		"Yeti"		30
+20		1		"Elite Yeti"		36
+25		1		"Ice Queen"		52
+
+//============================================================
+//=============================Ice Giant BOSS INVASION =======
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+587		1		"Ice Giant Stuttgart"		64
+
+// Dungeon
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+12		1		"Larva"		25
+17		1		"Cyclops"		28
+11		1		"Ghost"		32
+15		1		"Skeleton Archer"		34
+5		1		"Hell Hound"		38
+13		1		"Hell Spider"		40
+16		1		"Chief Skeleton Warrior"		42
+9		1		"Thunder Lich"		44
+8		1		"Poison Bull Fighter"		46
+10		1		"Dark Knight"		48
+18		1		"Gorgon"		55
+
+// Lost Tower
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+36		1		"Shadow"		47
+39		1		"Poison Shadow"		50
+34		1		"Cursed Wizard"		54
+41		1		"Death Cow"		57
+37		1		"Devil"		60
+40		1		"Death Knight"		62
+35		1		"Death Gorgon"		64
+
+// Atlans
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+45		1		"Bahamut"		60
+46		1		"Vepar"		61
+47		1		"Valkyrie"		62
+51		1		"Great Bahamut"		63
+52		1		"Silver Valkyrie"		64
+48		1		"Lizard King"		65
+
+// Tarkan
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+62		1		"Mutant"		72
+60		1		"Bloody wolf"		76
+57		1		"Iron Wheel"		80
+58		1		"Tantalos"		83
+61		1		"Beam Knight"		84
+
+// Icarus
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+69		1		"Alquamos"		75
+71		1		"Mega Crust"		78
+70		1		"Queen Rainier"		82
+73		1		"Drakan"		86
+74		1		"Alpha Crust"		92
+72		1		"Phantom Knight"		96
+75		1		"Great Drakan"		100
+
+76		1		"Phoenix Darkness shield"		106
+
+// Aida Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+308		1		"Death Tree"		72
+307		1		"Forest Orc"		74
+306		1		"Death Rider"		78
+305		1		"Blue Golem"		82
+304		1		"Witch Queen"		86
+
+// Aida 2		Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+549		1		"Bloody Orc"		102
+550		1		"Bloody Death Rider"		104
+551		1		"Bloody Golem"		106
+552		1		"Bloody Witch Queen"		108
+
+// Kanturu 1
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+351		1		"Splinter Wolf"		103
+352		1		"Iron Rider"		105
+353		1		"Satyros"		107
+
+// Kanturu 2
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+354		1		"Blade Hunter"		109
+355		1		"Kentauros"		110
+356		1		"Gigantis"		111
+350		1		"Berserker"		112
+357		1		"Genocider"		113
+
+// Kanturu 3
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+553		1		"Berserker Warrior"		114
+554		1		"Kentauros Warrior"		115
+555		1		"Gigantis Warrior"		116
+556		1		"Genocider Warrior"		117
+
+// Kanturu Relics
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+358		1		"Persona"		118
+359		1		"Twin Tale"		119
+360		1		"Dreadfear"		120
+
+// Crywolf Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+310		1		"Hammer Scout"		121
+311		1		"Lance Scout"		121
+312		1		"Bow Scout"		121
+
+313		1		"Werewolf"		122
+314		1		"Scout(Hero)"		123
+315		1		"Werewolf(Hero)"		124
+316		1		"Balram"		125
+317		1		"Soram"		126
+
+// Land of Trials Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+294		1		"Ax Warrior"		122
+290		1		"Lizard Warrior"		123
+293		1		"Poison Golem"		124
+292		1		"Queen Bee"		125
+291		1		"Fire Golem"		126
+
+// Swamp of Calmness
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+441		1		"Sapi-Unus"		137
+442		1		"Sapi-Duo"		138
+447		1		"Thunder Napin"		139
+444		1		"Shadow Pawn"		140
+445		1		"Shadow Knight"		141
+443		1		"Sapi-Tres"		142
+446		1		"Shadow Look"		143
+448		1		"Ghost Napin"		145
+449		1		"Blaze Napin"		146
+
+557		1		"Sapi Queen"		147
+558		1		"Ice Napin"		148
+559		1		"Shadow Master"		149
+
+//============================================================
+//										MEDUSA ELITE BOSS		
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+560		1		"Sapi Queen"		141
+561		1		"Medusa (Boss)"		175
+
+// Karutan 1		Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+569		1		"Venomous Chain Scorpion"		150
+570		1		"Bone Scorpion"		151
+574		1		"Crypos"		152
+573		1		"Crypta"		153
+
+// Karutan 2		Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+571		1		"Orcus"		154
+572		1		"Gollock"		155
+575		1		"Condra"		156
+576		1		"Narcondra"		157
+
+// Raklion Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+454		1		"Ice Walker"		158
+455		1		"Giant Mammoth"		159
+456		1		"Ice Giant"		160
+457		1		"Coolutin"		161
+458		1		"Iron Knight"		162
+
+562		1		"Dark Mammoth"		163
+563		1		"Dark Giant"		164
+564		1		"Dark Coolutin"		165
+565		1		"Dark Iron Knight"		166
+
+// Nixies Lake Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+616		1		"Paraca"		167
+597		1		"Vasuki"		168
+598		1		"Bass"		169
+
+// Ferea Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+611		1		"Ferea Knight"		170
+612		1		"Ferea Archer"		171
+613		1		"Ferea Fighter"		172
+
+// Kubera Mines
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+631		1		"Mine Digger"		173
+632		1		"Mine Porter"		174
+627		1		"Mine Driller"		175
+628		1		"Dead Drigger"		176
+629		1		"Dead Shoveler"		177
+636		1		"Dead Porter"		178
+
+
+//============================================================
+//============================== Skeleton King BOSS INVASION =
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+55		1		"Death King"		87
+56		1		"Death Bone"		74
+
+//============================================================
+//=============================== White Wizard BOSS INVASION =
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+135		1		"White Wizard"		87
+136		1		"Orc Soldier of Doom"		70
+137		1		"Orc Archer of Doom"		74
+
+
+//============================================================
+//===================================== OTHER INVASION =======
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+67		1		"Metal Balrog"		77
+
+
+//============================================================
+//=================================== QUEEN ANT INVASION =====
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+603		1		"Queen Ant"		190
+601		1		"Queen Guard"		130
+
+//============================================================
+//================================ Gnome(MiniBoss) INVASION ==
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+599		1		"Gnome(MiniBoss)"		100
+
+//============================================================
+//================================= Wings 2.5		ingderients ====
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+592		1		"Hellraiser"		48
+38		1		"Balrog"		66
+49		1		"Hydra"		74
+59		1		"Zaikan"		90
+
+
+//============================================================
+//================================== 3RD QUEST PROFESSION ====
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+63		1		"Death Beam Knight"		93
+309		1		"Hell Maine"		98
+77		1		"Phoenix of Darkness"		108
+
+409		1		"Balram"		117
+410		1		"Death Spirit"		118
+411		1		"Soram"		119
+
+412		1		"Dark Elf (Boss)"		128
+
+//============================================================
+//================================== Wings 3		ingderients =====
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+42		1		"Red Dragon"		145
+
+
+//============================================================
+//========================================== Maya ============
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+361		1		"Nightmare (Boss)"		135
+362		1		"Left Hands of Maya"		135
+363		1		"Right Hands of Maya"		135
+364		1		"Maya"		111
+
+//============================================================
+//==============================Sylphid BOSS INVASION ========
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+591		1		"Sylphid"		150
+
+
+//============================================================
+//======================================== Crywolf ===========
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+340		1		"Dark Elf"		135
+341		1		"Soram"		134
+344		1		"Balram"		134
+345		1		"Death spirit"		134
+348		1		"Tanker"		133
+349		1		"Balgass(Boss)"		135
+
+204		1		"Wolf Status"		2
+205		1		"Wolf Altar 1"		2
+206		1		"Wolf Altar 2"		2
+207		1		"Wolf Altar 3"		2
+208		1		"Wolf Altar 4"		2
+209		1		"Wolf Altar 5"		2
+
+
+//============================================================
+//===================================== Undine INVASION ======
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+589		1		"Undine"		110
+
+//============================================================
+//==================================Salamander INVASION ======
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+590		1		"Salamander"		120
+
+
+
+
+//============================================================
+//										SELUPAN ELITE BOSS		
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+459		1		"Selupan (Boss)"		145
+460		1		"Spider Eggs"		10
+461		1		"Spider Eggs"		10
+462		1		"Spider Eggs"		10
+
+
+
+//============================================================
+//										NIX ELITE BOSS			
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+602		1		"Nix (Boss)"		180
+
+
+//============================================================
+//										FEREA ELITE BOSS		
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+614		1		"Lord of Ferea Guard"		150
+615		1		"Lord of Ferea (Boss)"		194
+
+
+//============================================================
+//										KUBERIA ELITE BOSS		
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+617		1		"Lord Silvester(Boss)"		180
+630		1		"Scotch Of Darkness (Boss)"		194
+
+
+//============================================================
+//											ELITE BOSS			
+//============================================================
+// Erohim
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+295		1		"Erohim (Boss)"		128
+
+
+//============================================================
+//===================================== FAIRY INVASION =======
+//============================================================
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+365		1		"Pouch of Blessing"		100
+463		1		"Fire Flame Ghost"		149
+413		1		"Lunar Rabbit"		149
+
+//============================================================
+//==================================== GOLDEN INVASION =======
+//============================================================
+
+// Golden Monsters +1
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+43		1		"Golden Scorpion"		20
+78		1		"Golden Goblin"		20
+502		1		"Golden Rabbit"		20
+
+// Golden Monsters +2
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+81		1		"Golden Vepar"		40
+494		1		"Golden Devil"		40
+54		1		"Golden Soldier"		20
+83		1		"Golden Wheel"		80
+
+// Golden Monsters +3
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+493		1		"Golden Dark Knight"		20
+53		1		"Golden Titan"		20
+80		1		"Golden Lizard King"		40
+79		1		"Golden Derkon"		50
+
+// Golden Monsters +4
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+82		1		"Golden Tantallos"		80
+495		1		"Golden Stone Golem"		80
+496		1		"Golden Crust"		80
+497		1		"Golden Satyros"		120
+// Golden Monsters +5
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+498		1		"Golden Twin Tail"		120
+499		1		"Golden Iron Knight"		145
+500		1		"Golden Napin"		145
+501		1		"Great Golden Dragon"		145
+
+// +1		+2		+3
+151		1		"Golden Soldier"		20
+150		1		"Golden Bali"		20
+44		1		"Golden Dragon"		80
+
+
+// Aida NPC (Jewel of Harmony)
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+369		1		"Osbourne"		20
+370		1		"Jerridon"		20
+
+// Arena
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+200		1		"Soccer Ball"		12
+
+// Kanturu NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+367		1		"Gateway Machine"		20
+368		1		"Elpis"		20
+
+//3rd Class NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+406		1		"Apostle Devin"		2
+407		1		"Werewolf Quarel"		2
+408		1		"Gatekeeper"		2
+
+// Blood Castle NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+131		1		"Castle Gate"		2
+132		1		"Statue of Saint"		2
+133		1		"Statue of Saint"		2
+134		1		"Statue of Saint"		2
+
+// Blood Castle 1
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+84		1		"Chief Skeleton Warrior"		70
+85		1		"Chief Skeleton Archer"		71
+86		1		"Dark Skull Soldier"		72
+87		1		"Giant Ogre"		73
+88		1		"Red Skeleton Knight"		74
+89		1		"Magic Skeleton"		75
+
+// Blood Castle 2
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+90		1		"Chief Skeleton Warrior"		80
+91		1		"Chief Skeleton Archer"		81
+92		1		"Dark Skull Soldier"		82
+93		1		"Giant Ogre"		83
+94		1		"Red Skeleton Knight"		84
+95		1		"Magic Skeleton"		85
+
+// Blood Castle 3
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+96		1		"Chief Skeleton Warrior"		90
+97		1		"Chief Skeleton Archer"		91
+98		1		"Dark Skull Soldier"		92
+99		1		"Giant Ogre"		93
+111		1		"Red Skeleton Knight"		94
+112		1		"Magic Skeleton"		95
+
+// Blood Castle 4
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+113		1		"Chief Skeleton Warrior"		100
+114		1		"Chief Skeleton Archer"		101
+115		1		"Dark Skull Soldier"		102
+116		1		"Giant Ogre"		103
+117		1		"Red Skeleton Knight"		104
+118		1		"Magic Skeleton"		105
+
+// Blood Castle 5
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+119		1		"Chief Skeleton Warrior"		110
+120		1		"Chief Skeleton Archer"		111
+121		1		"Dark Skull Soldier"		112
+122		1		"Giant Ogre"		113
+123		1		"Red Skeleton Knight"		114
+124		1		"Magic Skeleton"		115
+
+// Blood Castle 6
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+125		1		"Chief Skeleton Warrior"		120
+126		1		"Chief Skeleton Archer"		121
+127		1		"Dark Skull Soldier"		122
+128		1		"Giant Ogre"		123
+129		1		"Red Skeleton Knight"		124
+130		1		"Magic Skeleton"		125
+
+// Blood Castle 7
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+138		1		"Chief Skeleton Warrior"		130
+139		1		"Chief Skeleton Archer"		131
+140		1		"Dark Skull Soldier"		132
+141		1		"Giant Ogre"		133
+142		1		"Red Skeleton Knight"		134
+143		1		"Magic Skeleton"		135
+
+// Blood Castle 8
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+428		1		"Chief Skeleton Warrior"		140
+429		1		"Chief Skeleton Archer"		141
+430		1		"Dark Skull Soldier"		142
+431		1		"Giant Ogre"		143
+432		1		"Red Skeleton Knight"		144
+433		1		"Magic Skeleton"		145
+
+// Chaos Castle
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+162		1		"Chaos Castle 1"		30
+163		1		"Chaos Castle 1"		32
+164		1		"Chaos Castle 2"		40
+165		1		"Chaos Castle 2"		45
+166		1		"Chaos Castle 3"		54
+167		1		"Chaos Castle 3"		60
+168		1		"Chaos Castle 4"		65
+169		1		"Chaos Castle 4"		68
+170		1		"Chaos Castle 5"		70
+171		1		"Chaos Castle 5"		75
+172		1		"Chaos Castle 6"		76
+173		1		"Chaos Castle 6"		80
+426		1		"Chaos Castle 7"		111
+427		1		"Chaos Castle 7"		114
+
+// Kalima Gates
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+152		1		"Magic stone of %s"		10
+153		1		"Magic stone of %s"		10
+154		1		"Magic stone of %s"		10
+155		1		"Magic stone of %s"		10
+156		1		"Magic stone of %s"		10
+157		1		"Magic stone of %s"		10
+158		1		"Magic stone of %s"		10
+
+// Kalima 1
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+147		1		"Aegis"		70
+148		1		"Rogue Centurion"		71
+146		1		"Blood Soldier"		72
+144		1		"Death Angel"		73
+149		1		"Necron"		74
+145		1		"Death Centurion"		75
+160		1		"Schriker"		76
+161		1		"Illusion of Kundun"		79
+
+// Kalima 2
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+174		1		"Death Angel"		80
+175		1		"Death Centurion"		81
+176		1		"Blood Soldier"		82
+177		1		"Aegis"		83
+178		1		"Rogue Centurion"		84
+179		1		"Necron"		85
+180		1		"Schriker"		86
+181		1		"Illusion of Kundun"		89
+
+// Kalima 3
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+182		1		"Death Angel"		100
+183		1		"Death Centurion"		101
+184		1		"Blood Soldier"		102
+185		1		"Aegis"		103
+186		1		"Rogue Centurion"		104
+187		1		"Necron"		105
+188		1		"Schriker"		106
+189		1		"Illusion of Kundun"		109
+
+// Kalima 4
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+190		1		"Death Angel"		110
+191		1		"Death Centurion"		111
+192		1		"Blood Soldier"		112
+193		1		"Aegis"		113
+194		1		"Rogue Centurion"		114
+195		1		"Necron"		115
+196		1		"Schriker"		116
+197		1		"Illusion of Kundun"		119
+
+// Kalima 5
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+260		1		"Death Angel"		120
+261		1		"Death Centurion"		121
+262		1		"Blood Soldier"		122
+263		1		"Aegis"		123
+264		1		"Rogue Centurion"		124
+265		1		"Necron"		125
+266		1		"Schriker"		126
+267		1		"Illusion of Kundun"		129
+
+// Kalima 6
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+268		1		"Death Angel"		130
+269		1		"Death Centurion"		131
+270		1		"Blood Soldier"		132
+271		1		"Aegis"		133
+272		1		"Rogue Centurion"		134
+273		1		"Necron"		135
+274		1		"Schriker"		136
+338		1		"Illusion of Kundun"		139
+
+// Kalima 7
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+331		1		"Aegis"		140
+332		1		"Rogue Centurion"		141
+333		1		"Blood Soldier"		142
+334		1		"Death Angel"		143
+335		1		"Necron"		144
+336		1		"Death Centurion"		145
+337		1		"Schriker"		146
+275		1		"Kundun (Boss)"		149
+
+
+// Traps
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+100		1		"Lance"		80
+101		1		"Iron Stick"		80
+102		1		"Fire"		80
+103		1		"Meteorite"		90
+104		1		"Trap"		2
+105		1		"Canon Trap"		80
+106		1		"Laser Trap"		80
+
+// NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+226		1		"Trainer"		2
+229		1		"Marlon"		2
+230		1		"Wandering Merchant Alex"		2
+231		1		"Thompson Kenel"		2
+232		1		"Archangel"		2
+233		1		"Messenger of Archangel"		2
+234		1		"Pet Trainer"		2
+235		1		"Sebina the Priest"		2
+236		1		"Golden Archer"		2
+237		1		"Charon"		2
+238		1		"Chaos Goblin"		2
+239		1		"Arena Guard"		2
+240		1		"Safety Guardian"		2
+241		1		"Royal Guard Captain Lorence"		2
+242		1		"Elf Lala"		2
+243		1		"Eo the Craftsman"		2
+244		1		"Caren the Barmaid"		2
+245		1		"Wizard Izabel"		2
+246		1		"Weapons Merchant Zienna"		20
+247		1		"Crossbow Guard"		90
+248		1		"Wandering Merchant Martin"		20
+249		1		"Berdysh Guard"		90
+250		1		"Wandering Merchant"		20
+251		1		"Hanzo the Blacksmith"		20
+252		1		""		2
+253		1		"Potion Girl Amy"		2
+254		1		"Pasi the Mage"		2
+255		1		"Lumen the Barmaid"		2
+256		1		"Lahap"		2
+257		1		"Shadow Phantom Soldier"		2
+258		1		"Luke the Helper"		90
+259		1		"Oracle Layla"		2
+371		1		"Leo the Helper"		90
+372		1		"Elite Skull Soldier"		10
+373		1		"Jack Olantern"		10
+374		1		"Santa"		10
+376		1		"Pamela the Supplier"		20
+377		1		"Angela the Supplier"		20
+378		1		"GameMaster"		2
+379		1		"Natasha the Firecracker Merchan"		2
+380		1		"Stone Statue"		2
+381		1		"MU Allies General"		2
+382		1		"Illusion Sorcerer Elder"		2
+383		1		"Alliance Sacred Item Storage"		2
+384		1		"Illusion Castle Sacred Item Sto"		2
+385		1		"Mirage"		2
+
+// Castle Siege NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+215		1		"Shield"		2
+216		1		"Crown"		2
+217		1		"Crown Switch 2"		2
+218		1		"Crown Switch 1"		2
+219		1		"Castle Gate Switch"		2
+220		1		"Gatekeeper"		2
+221		1		"Slingshot attack"		2
+222		1		"Slingshot defense"		2
+223		1		"Senior"		2
+224		1		"Guardsman"		2
+277		1		"Castle Gate"		2
+278		1		"Life Stone"		2
+283		1		"Guardian Statue"		2
+285		1		"Guardian"		2
+286		1		"Archer"		100
+287		1		"Spearman"		100
+288		1		"Canon Tower"		200
+
+
+// Chaos Card NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+375		1		"Chaos Card Master"		10
+
+// Illusion Temple NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+404		1		"MU Allies"		2
+405		1		"Illusion Sorcerer"		2
+
+// Illusion Temple 1
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+386		1		"Illusion Sorcerer Spirit"		65
+387		1		"Illusion Sorcerer Spirit"		65
+388		1		"Illusion Sorcerer Spirit"		67
+
+// Illusion Temple 2
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+389		1		"Illusion Sorcerer Spirit"		70
+390		1		"Illusion Sorcerer Spirit"		70
+391		1		"Illusion Sorcerer Spirit"		72
+
+// Illusion Temple 3
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+392		1		"Illusion Sorcerer Spirit"		75
+393		1		"Illusion Sorcerer Spirit"		75
+394		1		"Illusion Sorcerer Spirit"		77
+
+// Illusion Temple 4
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+395		1		"Illusion Sorcerer Spirit"		80
+396		1		"Illusion Sorcerer Spirit"		80
+397		1		"Illusion Sorcerer Spirit"		82
+
+// Illusion Temple 5
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+398		1		"Illusion Sorcerer Spirit"		85
+399		1		"Illusion Sorcerer Spirit"		85
+400		1		"Illusion Sorcerer Spirit"		87
+
+// Illusion Temple 6
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+401		1		"Illusion Sorcerer Spirit"		112
+402		1		"Illusion Sorcerer Spirit"		112
+403		1		"Illusion Sorcerer Spirit"		114
+
+
+// Thanksgiving Event
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+414		1		"Helper Ellen"		2
+
+// Elbeland NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+415		1		"Silvia"		2
+416		1		"Rhea"		2
+417		1		"Marce"		2
+
+// Elbeland Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+418		1		"Strange Rabbit"		4
+419		1		"Hideous Rabbit"		19
+420		1		"Werewolf"		24
+421		1		"Polluted Butterfly"		13
+422		1		"Cursed Lich"		30
+423		1		"Totem Golem"		36
+424		1		"Grizzly"		43
+425		1		"Captain Grizzly"		48
+
+// Cherry Blossom Event NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+450		1		"Cherry Blossom Spirit"		2
+451		1		"Cherry Blossom Tree"		2
+
+// Socket System NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+452		1		"Seed Master"		2
+453		1		"Seed Researcher"		2
+
+
+// Christmas Event
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+465		1		"Santa Claus"		149
+466		1		"Cursed Goblin"		70
+467		1		"Snowman"		10
+468		1		"Dasher"		10
+469		1		"Kermit"		10
+470		1		"Little Santa"		10
+471		1		"Cupid"		10
+472		1		"Prancer"		10
+473		1		"Donner"		10
+474		1		"Vixen"		10
+475		1		"Blitzen"		10
+476		1		"Cursed Santa"		149
+477		1		"Transformed Snowman"		10
+478		1		"Delgado"		2
+
+// Vulcanus
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+479		1		"Doorkeeper Titus"		10
+480		1		"Zombie Fighter"		90
+481		1		"Zombie Fighter"		120
+482		1		"Resurrected Gladiator"		93
+483		1		"Resurrected Gladiator"		121
+484		1		"Ash Slaughterer"		100
+485		1		"Ash Slaughterer"		122
+486		1		"Blood Assassin"		107
+487		1		"Cruel Blood Assassin"		109
+488		1		"Cruel Blood Assassin"		123
+489		1		"Burning Lava Giant"		111
+490		1		"Ruthless Lava Giant"		113
+491		1		"Ruthless Lava Giant"		124
+492		1		"Moss The Merchant"		2
+
+// Panda
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+503		1		"Transformed Panda"		10
+
+// Imperial Guardian [Objects]
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+523		1		"Trap"		2
+524		1		"Castle Gate 1"		1
+525		1		"Castle Gate 2"		1
+526		1		"Stone Statue 1"		1
+527		1		"Castle Gate 3"		1
+528		1		"Castle Gate 4"		1
+
+// Imperial Guardian [Monsters]
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+512		1		"Quartermaster"		1
+513		1		"Combat Instructor"		1
+514		1		"Knight Commander"		1
+515		1		"Grand Wizard"		1
+516		1		"Master Assassin"		1
+517		1		"Cavalry Captain"		1
+518		1		"Shield Bearer"		1
+519		1		"Medic"		1
+520		1		"Knights"		1
+521		1		"Bodyguard"		1
+
+// Imperial Guardian [Boss]
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+504		1		"Gaion Kharein"		1
+505		1		"Jerint"		1
+506		1		"Raymond"		1
+507		1		"Erkanne"		1
+508		1		"Destler"		1
+509		1		"Vermont"		1
+510		1		"Kato"		1
+511		1		"Galia"		1
+
+// Double Goer [Monsters]
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+532		1		"Larva"		16
+533		1		"Doppelganger"		15
+534		1		"Doppelganger Elf"		14
+535		1		"Doppelganger Knight"		14
+536		1		"Doppelganger Wizard"		14
+537		1		"Doppelganger Magic Gladiator"		14
+538		1		"Doppelganger Dark Lord"		17
+539		1		"Doppelganger Summoner"		14
+
+// Double Goer [Boss]
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+529		1		"Furious Slaughterer"		20
+530		1		"Slaughterer"		18
+531		1		"Ice Walker"		19
+
+// Imperial Guardian NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+522		1		"Jerint the Assistant"		2
+
+// Double Goer
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+540		1		"Lugard"		2
+541		1		"Interim Reward Chest"		2
+542		1		"Final Reward Chest"		2
+
+// Gens System
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+543		1		"Gens Duprian Steward"		2
+544		1		"Gens Vanert Steward"		2
+
+// Loren Market
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+545		1		"Christine the General Goods Mer"		2
+546		1		"Jeweler Raul"		2
+547		1		"Market Union Member Julia"		2
+548		1		"Transformed Skeleton"		10
+
+// Quest NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+566		1		"Mercenary Guild Manager Tercia"		2
+567		1		"Priestess Veina"		2
+568		1		"Wandering Merchant Zyro"		2
+
+// Kalrutan NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+577		1		"Leina the General Goods Merchan"		2
+578		1		"Weapons Merchant Bolo"		2
+
+// Lucky Items NPC
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+579		1		"David"		2
+
+// Unknown NPC|Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+464		1		"Re-Initialization Helper"		2
+
+//============================================================
+//============================================================
+//New Custums Monster
+//============================================================
+//============================================================
+
+// New - Freya Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+621		1		"Devil Fairy"		20
+622		1		"Elemental Beast"		36
+623		1		"Elemental Knight"		52
+
+
+// New - Land Of Trials Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+596		1		"Nars DevilFairy"		100
+608		1		"Nars Elemental Beast"		103
+609		1		"Nars Elemental Knight"		105
+
+// New - Devias Noria
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+588		1		"Crypos"		64
+
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+1000		1		"Crystal Blue"		2
+1001		1		"Crystal Blue Mini"		2
+1002		1		"Crystal Blue Max"		2
+1003		1		"Crystal Green"		2
+1004		1		"Crystal Green Mini"		2
+1005		1		"Crystal Green Max"		2
+1006		1		"Crystal Yellow"		2
+1007		1		"Crystal Yellow Mini"		2
+1008		1		"Crystal Yellow Max"		2
+1009		1		"Crystal Purple"		2
+1010		1		"Crystal Purple Mini"		2
+1011		1		"Crystal Purple Max"		2
+
+
+// New - Not Use Monsters
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+610		1		"Core Magriffy (Boss)"		190
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+604		1		"Uruk Devil Fairy"		136
+618		1		"Uruk Elemental Beast"		138
+619		1		"Uruk Elemental Knight"		140
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+593		1		"Debend Devilfairy"		126
+594		1		"Debend Elemental Beast"		127
+595		1		"Debend Elemental Knight"		128
+600		1		"Muff"		130
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+586		1		"Bone Scorpion"		12
+
+
+// Devil Square
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+64		1		"Ogre archer"		70
+65		1		"Elite Ogre"		74
+66		1		"Cursed king"		86
+434		1		"Gigantis"		105
+435		1		"Berserker"		106
+436		1		"Balram"		117
+437		1		"Soram"		119
+438		1		"Persona"		121
+439		1		"Dreadfear"		123
+440		1		"Dark Elf"		135
+
+// LorenDeep Event
+//------------------------------------------------------------
+//Index   Rate   Name                                 Level   
+//------------------------------------------------------------
+300		1		"Hero Mutant"		82
+301		1		"Omega Wing"		102
+302		1		"Axl Hero"		85
+303		1		"Gigas Golem"		94
+
+
+end
